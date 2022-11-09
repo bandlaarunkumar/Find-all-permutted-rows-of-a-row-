@@ -1,0 +1,135 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        body{
+            background-color: #b7d7e8);
+        }
+        
+
+        
+        
+        .middle{
+             /* For browsers that do not support gradients */
+            background-image: linear-gradient(to bottom right, rgb(158, 197, 234), rgb(125, 164, 163));
+            text-align: center;
+            
+            position: relative;
+            border-radius: 20px;
+            border-style: solid;
+            border-width: 2px;
+            animation-name: example;
+            animation-duration: 2.5s;
+            border-color:azure
+        } 
+
+        @keyframes example {
+            0% {opacity:0; margin-top: 500px;}
+            100% {opacity:1; margin-top: 10px;}
+        }
+
+        .btn{
+            margin-top:180px;
+        }
+
+        .container{
+            background-color: rgb(246, 242, 242); /* For browsers that do not support gradients */
+            background-image: linear-gradient(to bottom right, rgb(158, 197, 234), rgb(125, 164, 163));
+            
+        }
+
+        
+            
+        
+
+        #btn1{
+            padding:10px;
+            border:1px solid :#b7d7e8;
+            border-radius:10px;
+            font-size: 150%;
+            margin-top:100px;
+
+        }
+        #btn1:hover{
+            color:orange;
+            background-color:#b7d7e8;
+        }
+        
+        #para2{
+
+            border:2px solid black;
+            border-radius:10px;
+            font-size:25px;
+            width:40%;
+            float: right;
+            padding:15px;
+            margin-top: 20px;
+            margin-bottom:20px;
+        }
+        
+
+        #para3{
+
+            border:2px solid black;
+            border-radius:10px;
+            font-size:25px;
+            width:40%;
+            float:left;
+            margin-bottom:20px;
+            margin-top:20px;
+
+        }
+
+        #para1{
+
+            border:2px solid black;
+            border-radius:10px;
+            font-size:25px;
+            width:40%;
+            float:center; 
+            margin-top: 20px;
+            margin-bottom:20px;
+
+        }
+        
+    
+    </style>
+</head>
+<body>
+    <center>
+        <div class="middle">
+            <h1 >FIND THE PERMUTTED ROWS OF THE ROW IN A MATRIX</h1>
+        </div>
+        
+
+        <div id="para1" class="container">
+            <p>We are given an m*n matrix of positive integers and a row number. The task is to find all rows in given matrix which are permutations of given row elements. It is also given that values in every row are distinct.</p>
+            
+        </div>
+    </center>
+
+    <div id="para2" class="container">
+        <p>An efficient approach is to use hashing. Simply create a hash set for the given row. After hash set creation, traverse through the remaining rows, and for every row check if all of its elements are present in the hash set or not.  </p>
+        
+    </div>
+
+    <div id="para3"class="container">
+        <p>A simple solution is to one by one sort all rows and check all rows. If any row is completely equal to the given row, that means the current row is a permutation of the given row. The time complexity for this approach will be O(m*n log n).</p>
+    </div>
+
+    <center>
+        <div class="btn">
+            <button id="btn1" onclick="window.open('myproject.html');">NEXT</button>
+        </div>
+    </center>
+
+   
+</body>
+
+</html>

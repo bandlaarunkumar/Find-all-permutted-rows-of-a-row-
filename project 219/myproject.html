@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            padding:0%;
+            margin:0px;
+            
+            
+            background-color:#b7d7e8;
+            
+        }
+
+        #grad1 {
+            
+            
+}
+
+        #container{
+            margin-top: 10%;
+            border:2px solid lightcyan;
+            border-radius:20px;
+            width:45%;
+            
+            background-color: rgb(246, 242, 242); /* For browsers that do not support gradients */
+            background-image: linear-gradient(to bottom right, rgb(78, 105, 132), rgb(142, 233, 230));
+            
+            background-size: contain;
+            background-repeat: no-repeat;
+            
+
+        
+            
+        }
+
+        button{
+            margin: 20px;
+            padding:10px;
+            width:200px;
+            font-size:25px;
+            border-radius:25px;
+            border-color: aliceblue;
+            
+        }
+
+        button:hover{
+            cursor: pointer;
+            background-color: rgb(197, 226, 182);
+
+        }
+
+        label{
+            font-size: 40px;
+            color:#F0F0F0;
+            
+        }
+        input{
+            margin-top:20px;
+            
+            margin-bottom:20px;
+        }
+
+        
+        input:hover{
+            background-color:#003841d6;
+            color:rgba(251, 254, 252, 0.985);
+            border-radius:5px;
+           
+        }
+
+        .box{
+            padding:5px;
+            border-radius: 20px;
+            width:150%;
+        }
+
+        .loader-container{
+            position: fixed;
+            top:0; left:0;
+            height:100%; 
+            width:100%;
+            z-index: 10000;
+            background:black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .loader-container img{
+            width:35rem;
+        }
+
+        .loader-container.fade-out{
+            top:-110%;
+            opacity:0;
+        }
+
+    </style>
+</head>
+<body >
+    <center>
+
+        <div id="container">
+        
+            <table>
+                <tr>
+                <td><label>Enter Elements</label></td>
+                <td><input type="text"  class="box" id="Arun" ></td>
+                </tr>
+                <tr>
+                <td><label>Enter no Rows</label></td>
+                <td><input type="number" class="box" id="Arun1" ></td> 
+                </tr>
+                <tr>
+                <td><label>Enter no Columns</label></td>
+                <td><input type="number" class="box" id="Arun2" ></td>  
+                </tr>
+                <tr>
+                <td><label>Enter the Index</label></td>
+                <td><input type="number" class="box" id="Arun3" ></td>  
+                </tr>
+              
+            </table>
+            </div>
+
+    </center>
+
+    <center>
+        <button type="button" onclick="myfun()">Click Here</button>
+    </center>
+
+    <div class="loader-container">
+        <img src="R3.gif" alt="">
+    </div>
+
+    
+       
+    
+
+    
+    <script>
+ 
+        // Javascript program to find all permutations of a given row
+         
+        let MAX = 100;
+     
+           
+        // Function to find all permuted rows of a given row r
+        function permutatedRows(mat, m, n, r)
+        {
+            // Creating an empty set
+            let s = new Set();
+           
+           
+            // Count frequencies of elements in given row r
+            for (let j = 0; j < n; j++)
+                s.add(mat[r][j]);
+           
+            // Traverse through all remaining rows
+            for (let i = 0; i < m; i++)
+            {
+                // we do not need to check for given row r
+                if (i == r)
+                    continue;
+           
+                // initialize hash i.e; count frequencies
+                // of elements in row i
+                let j;
+                for (j = 0; j < n; j++)
+                    if (!s.has(mat[i][j]))
+                        break;
+                if (j != n)
+                continue;
+           
+                document.write(i+", ");
+            }
+        }
+         
+         
+        // Driver program
+         function myfun()
+         {
+            var row, column,r,i=0;
+            
+            var Arun=document.getElementById("Arun").value;
+            row=document.getElementById("Arun1").value;
+            column=document.getElementById("Arun2").value;
+            r=document.getElementById("Arun3").value;
+            
+            var processes=Arun.split(",");
+            var res = processes.map(Number);
+            var length = processes.length;
+            var mat = [];
+           for(var x = 0; x < row; x++){
+             mat[x] = [];    
+    for(var y = 0; y < column; y++){ 
+        mat[x][y] = res[i];  
+        i++;  
+
+    
+
+    }  
+
+}
+          
+            permutatedRows(mat, row, column, r);
+         
+         }
+
+        
+
+         function loader(){
+                 document.querySelector('.loader-container').classList.add('fade-out');
+        }
+
+        function fadeOut(){
+                 setInterval(loader, 3000);
+        }
+
+        window.onload = fadeOut;
+        </script>
+</body>
+</html>
